@@ -1,0 +1,8 @@
+else if (t->conjunction == AND) {
+        exec_aux(t->left, STDIN_FILENO, STDOUT_FILENO);
+        if (WIFEXITED(status)) {
+            if (WEXITSTATUS(status)) {
+                exec_aux(t->right, STDIN_FILENO, STDOUT_FILENO);
+            }
+        }
+    }
